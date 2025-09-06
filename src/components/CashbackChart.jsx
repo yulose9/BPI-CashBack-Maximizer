@@ -1,41 +1,41 @@
 // src/components/CashbackChart.jsx
-import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
-import React from "react";
-import { Doughnut } from "react-chartjs-2";
+import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js'
+import React from 'react'
+import { Doughnut } from 'react-chartjs-2'
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend)
 
 const CashbackChart = () => {
   const data = {
-    labels: ["Groceries", "Utilities & Drugstores", "Other Local Spend"],
+    labels: ['Groceries', 'Utilities & Drugstores', 'Other Local Spend'],
     datasets: [
       {
-        label: "Cashback Rate",
+        label: 'Cashback Rate',
         data: [4, 1, 0.3],
-        backgroundColor: ["#E2B842", "#FFFFFF", "#A8C3BE"],
-        borderColor: "#587C75",
+        backgroundColor: ['#E2B842', '#FFFFFF', '#A8C3BE'],
+        borderColor: '#587C75',
         borderWidth: 4,
       },
     ],
-  };
+  }
 
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "bottom",
+        position: 'bottom',
         labels: {
-          color: "#FFFFFF",
+          color: '#FFFFFF',
         },
       },
       tooltip: {
         callbacks: {
-          label: (context) => `${context.label || ""}: ${context.parsed || 0}%`,
+          label: (context) => `${context.label || ''}: ${context.parsed || 0}%`,
         },
       },
     },
-  };
+  }
 
   return (
     <section
@@ -53,7 +53,7 @@ const CashbackChart = () => {
         <Doughnut data={data} options={options} />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CashbackChart;
+export default CashbackChart

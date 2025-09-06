@@ -1,5 +1,5 @@
 // src/components/Disclaimer.jsx
-import React from "react";
+import React from 'react'
 
 const Disclaimer = () => {
   return (
@@ -46,7 +46,7 @@ const Disclaimer = () => {
         </ul>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Disclaimer;
+export default Disclaimer

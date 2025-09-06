@@ -1,34 +1,34 @@
 // src/components/FAQ.jsx
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const FAQ = () => {
-  const [openIndices, setOpenIndices] = useState([]);
+  const [openIndices, setOpenIndices] = useState([])
 
   const faqs = [
     {
-      question: "What if my grocery bill is ₱950?",
+      question: 'What if my grocery bill is ₱950?',
       answer:
-        "You will earn ₱0 cashback. A single transaction must be at least ₱1,000 to qualify.",
+        'You will earn ₱0 cashback. A single transaction must be at least ₱1,000 to qualify.',
     },
     {
-      question: "Is the cashback credited automatically?",
+      question: 'Is the cashback credited automatically?',
       answer:
-        "No. You must accumulate at least ₱500 and then manually request redemption via the BPI app or hotline.",
+        'No. You must accumulate at least ₱500 and then manually request redemption via the BPI app or hotline.',
     },
     {
-      question: "Does the Amore Platinum card have the same rules?",
+      question: 'Does the Amore Platinum card have the same rules?',
       answer:
-        "Yes, the ₱1,000 increment rule and ₱15,000 cap also apply. However, its bonus categories are different: 4% on restaurants and 1% on supermarkets.",
+        'Yes, the ₱1,000 increment rule and ₱15,000 cap also apply. However, its bonus categories are different: 4% on restaurants and 1% on supermarkets.',
     },
-  ];
+  ]
 
   const toggleFAQ = (index) => {
     setOpenIndices((prevIndices) =>
       prevIndices.includes(index)
         ? prevIndices.filter((i) => i !== index)
         : [...prevIndices, index]
-    );
-  };
+    )
+  }
 
   return (
     <section id="faq" className="animate-on-scroll">
@@ -40,7 +40,7 @@ const FAQ = () => {
           <div
             key={index}
             className={`faq-question ${
-              openIndices.includes(index) ? "open" : ""
+              openIndices.includes(index) ? 'open' : ''
             }`}
           >
             <button
@@ -71,7 +71,7 @@ const FAQ = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ

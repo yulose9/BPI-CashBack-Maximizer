@@ -1,25 +1,25 @@
 // src/components/Header.jsx
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { href: "#mechanics", text: "Home" },
-    { href: "#calculator", text: "Estimate" },
-    { href: "#strategies", text: "Strategies" },
-    { href: "#faq", text: "FAQ" },
-  ];
+    { href: '#mechanics', text: 'Home' },
+    { href: '#calculator', text: 'Estimate' },
+    { href: '#strategies', text: 'Strategies' },
+    { href: '#faq', text: 'FAQ' },
+  ]
 
   const handleScroll = (e, href) => {
-    e.preventDefault();
+    e.preventDefault()
     document.querySelector(href).scrollIntoView({
-      behavior: "smooth",
-    });
+      behavior: 'smooth',
+    })
     if (isOpen) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
-  };
+  }
 
   return (
     <nav className="glass-nav fixed top-0 left-0 right-0 z-50">
@@ -51,7 +51,7 @@ const Header = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                  d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
                 ></path>
               </svg>
             </button>
@@ -59,7 +59,7 @@ const Header = () => {
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (
             <a
@@ -74,7 +74,7 @@ const Header = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

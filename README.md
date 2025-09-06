@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# BPI Amore Cashback Maximizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive, single-page React application designed to help users of the BPI Amore Cashback credit card understand its mechanics and estimate their potential annual cashback.
 
-## Available Scripts
+![BPI Amore Cashback Maximizer Screenshot](https://i.imgur.com/your-screenshot.png)
+_Note: You'll need to replace the above URL with an actual screenshot of your project._
 
-In the project directory, you can run:
+**Live Demo:** [https://your-live-demo-url.com](https://your-live-demo-url.com)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Interactive Cashback Calculator:** Dynamically estimates monthly and annual cashback based on user spending in different categories (groceries, utilities, etc.).
+- **Animated Results:** Cashback totals animate smoothly as input values change.
+- **Visual Cashback Breakdown:** A Doughnut chart visualizes the cashback rates for different spending categories.
+- **Maximization Strategies:** A tabbed section outlines the core rules, pro tips, and common pitfalls associated with the card.
+- **Responsive Design:** A mobile-first design that ensures a seamless experience on desktops, tablets, and smartphones.
+- **Glassmorphism UI:** A modern, glassy aesthetic for the navigation and key components.
+- **Smooth Scrolling & Animations:** Subtle animations on scroll and smooth navigation between sections enhance the user experience.
+- **Comprehensive FAQ:** An accordion-style FAQ section answers common questions about the card.
+- **Legal Disclaimer:** A clear disclaimer regarding the app's purpose and non-affiliation with BPI.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+- **Frontend:** [React](https://reactjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first styling & custom CSS for effects.
+- **Charts:** [Chart.js](https://www.chartjs.org/) with [react-chartjs-2](https://react-chartjs-2.js.org/) for data visualization.
+- **Animations:**
+  - [Framer Motion](https://www.framer.com/motion/) (or `react-transition-group`) for component transitions.
+  - [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for scroll-based animations.
+- **Deployment:** Hosted on [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or [GitHub Pages](https://pages.github.com/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running, follow these simple steps.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You need to have [Node.js](https://nodejs.org/) (version 14 or later) and [npm](https://www.npmjs.com/) installed on your machine.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```sh
+   git clone https://github.com/your-username/bpi-cashback-maximizer.git
+   ```
 
-## Learn More
+2. **Navigate to the project directory:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   cd bpi-cashback-maximizer
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Install NPM packages:**
 
-### Code Splitting
+   ```sh
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Running the App
 
-### Analyzing the Bundle Size
+To run the app in development mode:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+npm start
+```
 
-### Making a Progressive Web App
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload when you make changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📜 Disclaimer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This application is for educational and informational purposes only. It is not affiliated with, endorsed by, or in any way officially connected with the Bank of the Philippine Islands (BPI). The calculations are estimates and should not be considered financial advice. Always refer to the official BPI website for the most accurate and up-to-date information.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Acknowledgments
+
+- Project inspired by the need for a clearer understanding of credit card reward systems.
+- Built with [Create React App](https://github.com/facebook/create-react-app).

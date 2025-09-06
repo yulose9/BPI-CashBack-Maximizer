@@ -1,113 +1,108 @@
 // src/components/Calculator.jsx
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
 const Calculator = () => {
   const [values, setValues] = useState({
-    groceries: "",
-    utilities: "",
-    others: "",
-  });
+    groceries: '',
+    utilities: '',
+    others: '',
+  })
 
   const [warnings, setWarnings] = useState({
-    groceries: "",
-    utilities: "",
-    others: "",
-  });
+    groceries: '',
+    utilities: '',
+    others: '',
+  })
 
-  const [annualCapWarning, setAnnualCapWarning] = useState("");
+  const [annualCapWarning, setAnnualCapWarning] = useState('')
 
   // Refs for animated values
-  const monthlyRef = useRef(null);
-  const annualRef = useRef(null);
-  const prevCashback = useRef({ monthly: 0, annual: 0 });
+  const monthlyRef = useRef(null)
+  const annualRef = useRef(null)
+  const prevCashback = useRef({ monthly: 0, annual: 0 })
 
   const formatCurrency = (value) => {
-    if (!value) return "";
-    return parseInt(value.replace(/,/g, ""), 10).toLocaleString("en-US");
-  };
+    if (!value) return ''
+    return parseInt(value.replace(/,/g, ''), 10).toLocaleString('en-US')
+  }
 
   const parseValue = (value) => {
-    return parseFloat(value.replace(/,/g, "")) || 0;
-  };
+    return parseFloat(value.replace(/,/g, '')) || 0
+  }
 
   const getCashback = (amount, rate) => {
-    return Math.floor(amount / 1000) * 1000 * (rate / 100);
-  };
+    return Math.floor(amount / 1000) * 1000 * (rate / 100)
+  }
 
   const animateValue = (element, start, end, duration) => {
-    if (!element) return;
+    if (!element) return
 
-    let startTimestamp = null;
+    let startTimestamp = null
     const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      const currentValue = progress * (end - start) + start;
-      element.textContent = `₱${currentValue.toLocaleString("en-US", {
+      if (!startTimestamp) startTimestamp = timestamp
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1)
+      const currentValue = progress * (end - start) + start
+      element.textContent = `₱${currentValue.toLocaleString('en-US', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
-      })}`;
+      })}`
       if (progress < 1) {
-        window.requestAnimationFrame(step);
+        window.requestAnimationFrame(step)
       }
-    };
-    window.requestAnimationFrame(step);
-  };
+    }
+    window.requestAnimationFrame(step)
+  }
 
   const calculateCashback = useCallback(() => {
     const parsedValues = {
       groceries: parseValue(values.groceries),
       utilities: parseValue(values.utilities),
       others: parseValue(values.others),
-    };
+    }
 
     // Update warnings
-    const newWarnings = {};
+    const newWarnings = {}
     Object.keys(parsedValues).forEach((cat) => {
       newWarnings[cat] =
         parsedValues[cat] > 0 && parsedValues[cat] < 1000
-          ? "Spend must be at least ₱1,000"
-          : "";
-    });
-    setWarnings(newWarnings);
+          ? 'Spend must be at least ₱1,000'
+          : ''
+    })
+    setWarnings(newWarnings)
 
     // Calculate cashback
     const monthly =
       getCashback(parsedValues.groceries, 4) +
       getCashback(parsedValues.utilities, 1) +
-      getCashback(parsedValues.others, 0.3);
+      getCashback(parsedValues.others, 0.3)
 
-    const annual = Math.min(monthly * 12, 15000);
+    const annual = Math.min(monthly * 12, 15000)
 
     // Animate the values
-    animateValue(
-      monthlyRef.current,
-      prevCashback.current.monthly,
-      monthly,
-      500
-    );
-    animateValue(annualRef.current, prevCashback.current.annual, annual, 500);
+    animateValue(monthlyRef.current, prevCashback.current.monthly, monthly, 500)
+    animateValue(annualRef.current, prevCashback.current.annual, annual, 500)
 
-    prevCashback.current = { monthly, annual };
+    prevCashback.current = { monthly, annual }
 
     // Update annual cap warning
-    setAnnualCapWarning(annual >= 15000 ? "Annual ₱15,000 cap reached!" : "");
-  }, [values]);
+    setAnnualCapWarning(annual >= 15000 ? 'Annual ₱15,000 cap reached!' : '')
+  }, [values])
 
   const handleInputChange = (field, value) => {
     // Remove non-numeric characters
-    const numericValue = value.replace(/[^0-9]/g, "");
-    const formattedValue = numericValue ? formatCurrency(numericValue) : "";
+    const numericValue = value.replace(/[^0-9]/g, '')
+    const formattedValue = numericValue ? formatCurrency(numericValue) : ''
 
     setValues((prev) => ({
       ...prev,
       [field]: formattedValue,
-    }));
-  };
+    }))
+  }
 
   useEffect(() => {
-    calculateCashback();
-  }, [values, calculateCashback]);
+    calculateCashback()
+  }, [values, calculateCashback])
 
   return (
     <section
@@ -139,7 +134,7 @@ const Calculator = () => {
                 id="groceries"
                 placeholder="10,000"
                 value={values.groceries}
-                onChange={(e) => handleInputChange("groceries", e.target.value)}
+                onChange={(e) => handleInputChange('groceries', e.target.value)}
                 className="cashback-input block w-full p-2 border border-gray-500 rounded-md shadow-sm bg-gray-800/50 text-white focus:ring-bpi-gold focus:border-bpi-gold transition-all"
               />
             </div>
@@ -163,7 +158,7 @@ const Calculator = () => {
                 id="utilities"
                 placeholder="5,000"
                 value={values.utilities}
-                onChange={(e) => handleInputChange("utilities", e.target.value)}
+                onChange={(e) => handleInputChange('utilities', e.target.value)}
                 className="cashback-input block w-full p-2 border border-gray-500 rounded-md shadow-sm bg-gray-800/50 text-white focus:ring-bpi-gold focus:border-bpi-gold transition-all"
               />
             </div>
@@ -187,7 +182,7 @@ const Calculator = () => {
                 id="others"
                 placeholder="8,000"
                 value={values.others}
-                onChange={(e) => handleInputChange("others", e.target.value)}
+                onChange={(e) => handleInputChange('others', e.target.value)}
                 className="cashback-input block w-full p-2 border border-gray-500 rounded-md shadow-sm bg-gray-800/50 text-white focus:ring-bpi-gold focus:border-bpi-gold transition-all"
               />
             </div>
@@ -227,7 +222,7 @@ const Calculator = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Calculator;
+export default Calculator
