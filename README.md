@@ -2,8 +2,7 @@
 
 An interactive, single-page React application designed to help users of the BPI Amore Cashback credit card understand its mechanics and estimate their potential annual cashback.
 
-![BPI Amore Cashback Maximizer Screenshot](https://i.imgur.com/your-screenshot.png)
-_Note: You'll need to replace the above URL with an actual screenshot of your project._
+![BPI Amore Cashback Maximizer Screenshot](assets/bpi-demo.png)
 
 **Live Demo:** [https://your-live-demo-url.com](https://your-live-demo-url.com)
 
