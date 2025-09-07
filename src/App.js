@@ -1,4 +1,5 @@
 // src/App.js
+import { Analytics } from '@vercel/analytics/react'
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Calculator from './components/Calculator'
@@ -101,6 +102,7 @@ function App() {
         <AnimatedSection>
           <Footer />
         </AnimatedSection>
+        <Analytics />
       </div>
     </>
   )
