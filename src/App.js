@@ -1,5 +1,6 @@
 // src/App.js
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import React, { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Calculator from './components/Calculator'
@@ -103,6 +104,7 @@ function App() {
           <Footer />
         </AnimatedSection>
         <Analytics />
+        <SpeedInsights />
       </div>
     </>
   )
