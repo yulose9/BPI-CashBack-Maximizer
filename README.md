@@ -4,7 +4,7 @@ An interactive, single-page React application designed to help users of the BPI 
 
 ![BPI Amore Cashback Maximizer Screenshot](assets/bpi-demo.png)
 
-**Live Demo:** [https://your-live-demo-url.com](https://your-live-demo-url.com)
+**Live Demo:** [https://bpi-cash-back-maximizer.vercel.app/](bpi-cash-back-maximizer.vercel.app/)
 
 ---
 
